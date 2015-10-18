@@ -1,0 +1,19 @@
+[
+{
+  "modid": "SomeCraft",
+  "name": "SomeCraft",
+  "description": "Bridging the gap between Technology and Magic.",
+  "version": "1.0",
+  "mcversion": "1.8",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [ "Cole"] ,
+  "credits": " by Cole",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
