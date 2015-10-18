@@ -1,16 +1,22 @@
 package com.cole.somecraft;
 
+import com.cole.somecraft.proxy.IProxy;
+import com.cole.somecraft.reference.Reference;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid="SomeCraft", name="SomeCraft", version="1.8-1.0" )
+@Mod(modid= Reference.MOD_ID, name=Reference.MOD_NAME, version=Reference.MOD_VERSION)
 public class SomeCraft
 {
 
     @Mod.Instance("SomeCraft")
     public static SomeCraft instance;
+
+    @SidedProxy(clientSide = "com.cole.somecraft.proxy.ClientProxy", serverSide = "com.cole.somecraft.proxy.ServerProxy")
+    public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
