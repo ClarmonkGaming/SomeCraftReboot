@@ -1,5 +1,6 @@
 package com.cole.somecraft;
 
+import com.cole.somecraft.configuration.configurationhandler;
 import com.cole.somecraft.proxy.IProxy;
 import com.cole.somecraft.reference.Reference;
 import net.minecraftforge.fml.common.Mod;
@@ -12,16 +13,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class SomeCraft
 {
 
-    @Mod.Instance("SomeCraft")
+    @Mod.Instance(Reference.MOD_ID)
     public static SomeCraft instance;
 
-    @SidedProxy(clientSide = "com.cole.somecraft.proxy.ClientProxy", serverSide = "com.cole.somecraft.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        configurationhandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
